@@ -1,0 +1,387 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Skolera Task",
+		"_postman_id": "9c5ac3a7-d349-3c90-c08c-212c42ae0e07",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth Module",
+			"description": "",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"url": "http://localhost:3000/register",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user[email]",
+									"value": "student2@gmail.com",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "user[password]",
+									"value": "123456",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "user[name]",
+									"value": "fawzyyyyy",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "user[user_type]",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[profile]",
+									"description": "",
+									"type": "file",
+									"src": "52537781_2254767454588222_9219842419846021120_n.jpg"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "sign in",
+					"request": {
+						"url": "http://localhost:3000/login",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user[email]",
+									"value": "admin@gmail.com",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "user[password]",
+									"value": "123456",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"url": "http://localhost:3000/logout",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4NDI0LCJleHAiOjE1NTA4MjQ4MjQsImp0aSI6ImQ1NjcxODgyLWM1ZDgtNDVkYS1hMjAzLTFkZjlmOTc4YTc1OSJ9.u8RD34DNTfHEbbVqOMZmctwRSpVOmE5eXQdCQh8uHgI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course Module",
+			"description": "",
+			"item": [
+				{
+					"name": "create new course",
+					"request": {
+						"url": "http://localhost:3000/api/v1/courses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4OTE1LCJleHAiOjE1NTA4MjUzMTUsImp0aSI6IjY1OWU4N2JiLWFiY2UtNDRkOS1iNTllLTQ2MWI1YWJlMDllYiJ9.kNAstHkL2znBTXPUp9o0n517jZdpcfkcGsG7kTKoO_I",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course[name]",
+									"value": "course 11",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all courses",
+					"request": {
+						"url": "http://localhost:3000/api/v1/courses",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNjU4MTc3LCJleHAiOjE1NTA3NDQ1NzcsImp0aSI6IjU2YWI2NzhjLTk3YTgtNDRiNS1hZjQ4LWZlMGZmMjQ5NmFjZCJ9.DYBSgHp_nUTOyeiFtW9DBrztxfGt9zP4-EBUWkuL5Wo",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student Course Module",
+			"description": "",
+			"item": [
+				{
+					"name": "Student retrieves all registered courses",
+					"request": {
+						"url": "http://localhost:3000/api/v1/student_courses",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4NTMzLCJleHAiOjE1NTA4MjQ5MzMsImp0aSI6IjI5NDBiOTc5LTNiYjctNGJkZS05ZjIxLWJiMWU5YTYwNTZhMyJ9.dhCRXVWUyTcX2H3Es5sMUzPat6UVkoyqVSvuMH89SnM",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Student retrieves a specific registered course by id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/student_courses/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4NTMzLCJleHAiOjE1NTA4MjQ5MzMsImp0aSI6IjI5NDBiOTc5LTNiYjctNGJkZS05ZjIxLWJiMWU5YTYwNTZhMyJ9.dhCRXVWUyTcX2H3Es5sMUzPat6UVkoyqVSvuMH89SnM",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "student_course[course_id]",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "student enroll course",
+					"request": {
+						"url": "http://localhost:3000/api/v1/student_courses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4NTMzLCJleHAiOjE1NTA4MjQ5MzMsImp0aSI6IjI5NDBiOTc5LTNiYjctNGJkZS05ZjIxLWJiMWU5YTYwNTZhMyJ9.dhCRXVWUyTcX2H3Es5sMUzPat6UVkoyqVSvuMH89SnM",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "student_course[course_id]",
+									"value": "11",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "student update enrollment in a specific course",
+					"request": {
+						"url": "http://localhost:3000/api/v1/student_courses/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4NTMzLCJleHAiOjE1NTA4MjQ5MzMsImp0aSI6IjI5NDBiOTc5LTNiYjctNGJkZS05ZjIxLWJiMWU5YTYwNTZhMyJ9.dhCRXVWUyTcX2H3Es5sMUzPat6UVkoyqVSvuMH89SnM",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "student_course[course_id]",
+									"value": "11",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher Course Module",
+			"description": "",
+			"item": [
+				{
+					"name": "Teacher retrieves all of his courses",
+					"request": {
+						"url": "http://localhost:3000/api/v1/teacher_courses",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4NzcyLCJleHAiOjE1NTA4MjUxNzIsImp0aSI6ImMyZGQzOTcwLWMzNDktNGJkOS1iNDI3LTUzYjk2NWRlNzllNiJ9.P9UuSIq-WA_7m8WYN-SQyf-ZAvy2btYhwpkR5rBI8Lg",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Teacher retrieves a specific course by id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/teacher_courses/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4NzcyLCJleHAiOjE1NTA4MjUxNzIsImp0aSI6ImMyZGQzOTcwLWMzNDktNGJkOS1iNDI3LTUzYjk2NWRlNzllNiJ9.P9UuSIq-WA_7m8WYN-SQyf-ZAvy2btYhwpkR5rBI8Lg",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "student_course[course_id]",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Assign teacher to courses",
+					"request": {
+						"url": "http://localhost:3000/api/v1/teacher_courses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4NzcyLCJleHAiOjE1NTA4MjUxNzIsImp0aSI6ImMyZGQzOTcwLWMzNDktNGJkOS1iNDI3LTUzYjk2NWRlNzllNiJ9.P9UuSIq-WA_7m8WYN-SQyf-ZAvy2btYhwpkR5rBI8Lg",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "teacher_course[course_id]",
+									"value": "11",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update assign teacher to courses",
+					"request": {
+						"url": "http://localhost:3000/api/v1/teacher_courses/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4NzcyLCJleHAiOjE1NTA4MjUxNzIsImp0aSI6ImMyZGQzOTcwLWMzNDktNGJkOS1iNDI3LTUzYjk2NWRlNzllNiJ9.P9UuSIq-WA_7m8WYN-SQyf-ZAvy2btYhwpkR5rBI8Lg",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "teacher_course[course_id]",
+									"value": "13",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report Module",
+			"description": "",
+			"item": [
+				{
+					"name": "Users Report",
+					"request": {
+						"url": "http://localhost:3000/api/v1/reports",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTUwNzM4MDEzLCJleHAiOjE1NTA4MjQ0MTMsImp0aSI6IjYzOWJkNDY1LTcxMzgtNGNiNy1hNzM0LWIxMDczMDM2ODg5NiJ9.PsYMH_zO-U1a2AFtaMJS8Hst7hJKEpXwHMqO_2r1XAE",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
