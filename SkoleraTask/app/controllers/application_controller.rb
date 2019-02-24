@@ -22,8 +22,6 @@ class ApplicationController < ActionController::API
         "#{request.protocol}#{request.host}"
       end
     end
-
-    private
     
     def number_per_page
         @per_page ||= params[:per_page] || 3
